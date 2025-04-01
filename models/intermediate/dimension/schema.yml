@@ -1,0 +1,44 @@
+version: 2    
+
+models:
+  - name: dim_products  
+    description: "Dimension Table that includes data about products"     
+    columns:
+      - name: product_id
+        description: "product_id"
+        tests: 
+          - unique
+          - not_null
+
+      - name: product_name
+        description: "porduct_name"
+
+      - name: product_category
+        description: "product_category"
+        tests:
+          - accepted_values:
+              values: ['Art & Crafts', 'Games', 'Toys', 'Electronics' , 'Sports & Outdoors']
+
+      - name: product_cost
+        description: "cost of the product ($USD)"
+
+      - name: product_price
+        description: "price of the product ($USD)"
+
+  - name: dim_stores
+    description: "Dimension table that includes data about stores"
+    columns:
+      - name: store_id
+        description: "store_id"
+        tests:
+          - unique
+          - not_null
+
+      - name: store_name
+        description: "name of the store"
+
+      - name: store_location
+        description: "location of the store"
+
+      - name: store_open_date
+        description: "when that store was opened"

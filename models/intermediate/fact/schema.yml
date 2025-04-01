@@ -1,0 +1,51 @@
+version: 2     
+
+models:
+  - name: fct_sales      
+    description: "Fact table that include data about the sales"      
+    columns:
+      - name: sales_id   
+        description: "sales_id"
+        tests:
+          - unique
+          - not_null  
+
+      - name: sales_date 
+        description: "date of sales"  
+
+      - name: store_id   
+        description: "store id"
+        tests:
+          - relationships:
+              to: ref('dim_stores')
+              field: store_id  
+
+      - name: product_id 
+        description: "product_id"
+        tests:
+          - relationships:
+              to: ref('dim_products')
+              field: product_id
+
+      - name: sales_units
+        description: "quantity of units sold"  
+
+  - name: fct_inventory  
+    description: "table that include data about the inventory"      
+    columns:
+      - name: store_id   
+        description: "store id"
+        tests:
+          - relationships:
+              to: ref('dim_stores')
+              field: store_id  
+              
+      - name: product_id
+        description: "product id"
+        tests:
+          - relationships:
+              to: ref('dim_products')
+              field: product_id
+
+      - name: storck_in_hand
+        description: "quantity of stock"

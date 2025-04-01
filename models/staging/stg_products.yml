@@ -1,0 +1,19 @@
+models:
+  - name: stg_products
+    description: ""
+    columns:
+      - name: product_id
+        description: ""
+
+      - name: product_name
+        description: ""
+
+      - name: product_category
+        description: ""
+
+      - name: product_cost
+        description: ""
+
+      - name: product_price
+        description: ""
+

@@ -1,0 +1,18 @@
+models:
+  - name: stg_sales
+    description: ""
+    columns:
+      - name: sales_id
+        description: ""
+
+      - name: sales_date
+        description: ""
+
+      - name: store_id
+        description: ""
+
+      - name: product_id
+        description: ""
+
+      - name: sales_units
+        description: ""

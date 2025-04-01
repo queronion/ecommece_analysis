@@ -1,0 +1,15 @@
+models:
+  - name: stg_stores
+    description: ""
+    columns:
+      - name: store_id
+        description: ""
+
+      - name: store_name
+        description: ""
+
+      - name: store_location
+        description: ""
+
+      - name: store_open_date
+        description: ""

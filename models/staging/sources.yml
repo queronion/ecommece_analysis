@@ -1,0 +1,28 @@
+version: 2
+
+sources:
+  - name: bigquery_data  # The name used in source() function
+    description: "Data mirrored from MySQL to BigQuery"
+    database: coral-hydra-446105-p0  # Project ID in BigQuery
+    schema: ecommerce  # Dataset in BigQuery
+
+    tables:
+      - name: sales
+        identifier: sales  # Only the table name, NOT full path
+        description: "Sales table"
+        # will check the freshness of data in that table so I can get notified when table updated
+        freshness:
+          warn_after: {count: 1, period: hour} # will get a warn after one hour if the data is updated in the table 
+          error_after: {count: 24, period: hour} # will get an error after 24 hours when the data updated in the table
+
+      - name: products
+        identifier: products
+        description: "Products table"
+
+      - name: inventory
+        identifier: inventory
+        description: "Inventory table"
+
+      - name: stores
+        identifier: stores
+        description: "Stores table"
